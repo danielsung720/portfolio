@@ -1,0 +1,45 @@
+.calendar_wrapper{
+    display: flex;
+    margin-left: 40px;
+    margin-top: 15px;
+    height: 30px;
+    width: 92%;
+    padding-bottom: 5px;
+    border-bottom: 1px #dddddd solid;
+    .title{
+        width: 20%;
+        color: #565656;
+        font-weight: bold;
+        background-color: #f8f9fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .calendar{
+        color: #565656;
+        width: 80%;
+        display: flex;
+        justify-content: flex-end;
+        font-weight: bold;
+        .year,
+        .date,
+        .weekday,
+        .time_now{
+            height: 10px;
+            line-height: 10px;
+            padding: 10px 20px;
+        }
+        .year{
+            background-color: #e9ecef;
+        }
+        .date{
+            background-color: #dee2e6;
+        }
+        .weekday{
+            background-color: #ced4da;
+        }
+        .time_now{
+            background-color: #adb5bd;
+        }
+    }
+}

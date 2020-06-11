@@ -1,0 +1,40 @@
+.sidebar_wrapper{
+    width: 250px;
+    background-color: #000000;
+    .sidebar{
+        color: #ffffff;
+        width: 250px;
+        .photo{
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            img{
+                width: 150px;
+            }
+        }
+        .title{
+            margin-top: 10px;
+            text-align: center;
+        }
+        .nav{
+            margin-top: 10px;
+            text-align: center;
+            ul{
+                li{
+                    margin-top: 10px;
+                    button{
+                        padding: 5px;
+                        color: #fff;
+                        border: none;
+                        background-color: #000000;
+                        outline: none;
+                        cursor: pointer;
+                    }
+                    button:hover{
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
