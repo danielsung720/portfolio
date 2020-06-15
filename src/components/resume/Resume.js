@@ -29,6 +29,15 @@ const data = {
             length_of_time: '2個月'
         },
         {
+            name: '登泰國際物流有限公司',
+            job_content: '針對進出口客戶開發：海運、空運進出口、轉口運送承攬及倉儲報關等業務',
+            job_title: '行銷專員',
+            industry: '國內業務人員',
+            location: '高雄市苓雅區',
+            time: '2019/2~2019/5',
+            length_of_time: '4個月'
+        },
+        {
             name: '國泰人壽',
             job_content: '銷售商品、客戶服務、組織發展',
             job_title: '業務主任',
