@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import Sidebar from './components/sidebar/Sidebar';
 import Calender from './components/calendar/Calendar';
 import Resume from './components/resume/Resume';
+import TodoList from './components/todolist/TodoList';
 import './scss/app.scss';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
             <Sidebar />
             <Calender />
             <Route path="/resume" exact component={Resume} />
-            {/* <Route path="/books" component={Books} /> */}
+            <Route path="/todo_list" component={TodoList} />
         </div>
     );
 }
