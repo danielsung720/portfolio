@@ -5,11 +5,11 @@ import '../../scss/sidebar.scss';
 const navData = [
     {
         text: 'Resume',
-        url: '/resume',
+        url: '/#/',
     },
     {
         text: 'Todo List',
-        url: '/todo_list',
+        url: '/#/todo_list',
     },
     {
         text: 'PomodoroTimer',
