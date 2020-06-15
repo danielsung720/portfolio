@@ -33,6 +33,13 @@ const Sidebar = () => {
                         })}
                     </ul>
                 </div>
+                <div className="remarks">
+                    <p>一個立志成為</p>
+                    <p>前端大師的北漂兒</p>
+                    <p>在此用高雄的溫度</p>
+                    <p>來寫下對於前端的熱情</p>
+                    <p>（～￣▽￣～）</p>
+                </div>
             </div>
         </div>
     )
