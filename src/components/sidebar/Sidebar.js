@@ -1,21 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Logo from '../../images/logo.png';
 import '../../scss/sidebar.scss';
 
 const navData = ['Resume', 'Todo List', 'PomodoroTimer', 'Search(API)'];
 
 const Sidebar = () => {
-
-    const [documentHeight, setDocumentHeight] = useState(document.documentElement.clientHeight);
-
-    useEffect(() => {
-        window.addEventListener('load', () => {
-            setDocumentHeight(document.body.scrollHeight);
-        })
-    })
-
     return (
-        <div className="sidebar_wrapper" style={{ height: documentHeight - 0.1 + 'px' }}>
+        <div className="sidebar_wrapper">
             <div className="sidebar">
                 <div className="photo">
                     <img src={Logo} alt="isME"></img>
