@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Logo from '../../images/logo.png';
 import '../../scss/sidebar.scss';
 
-const navData = ['Resume', 'Todo List', 'PomodoroTimer', 'Seadch(API)'];
+const navData = ['Resume', 'Todo List', 'PomodoroTimer', 'Search(API)'];
 
 const Sidebar = () => {
 
