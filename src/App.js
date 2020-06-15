@@ -1,13 +1,15 @@
 import React from 'react';
 import Sidebar from './components/sidebar/Sidebar';
-import Container from './components/container/Container';
+import Calender from './components/calendar/Calendar';
+import Resume from './components/resume/Resume';
 import './scss/app.scss';
 
 function App() {
     return (
         <div className="App">
             <Sidebar />
-            <Container />
+            <Calender />
+            <Resume />
         </div>
     );
 }
