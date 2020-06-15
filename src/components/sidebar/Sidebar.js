@@ -2,7 +2,24 @@ import React from 'react';
 import Logo from '../../images/logo.png';
 import '../../scss/sidebar.scss';
 
-const navData = ['Resume', 'Todo List', 'PomodoroTimer', 'Search(API)'];
+const navData = [
+    {
+        text: 'Resume',
+        url: '/resume',
+    },
+    {
+        text: 'Todo List',
+        url: '/todo_list',
+    },
+    {
+        text: 'PomodoroTimer',
+        url: '/pomodoro_timer',
+    },
+    {
+        text: 'Search(API)',
+        url: '/search_api',
+    }
+]
 
 const Sidebar = () => {
     return (
@@ -18,9 +35,11 @@ const Sidebar = () => {
                 <div className="nav">
                     <ul>
                         {navData.map((item, i) => {
-                            return <li key={i}>
-                                <button>{item}</button>
-                            </li>
+                            return(
+                                <li key={i}>
+                                    <a href={item.url}>{item.text}</a>
+                                </li>
+                                )
                         })}
                     </ul>
                 </div>

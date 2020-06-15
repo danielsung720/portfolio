@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import Sidebar from './components/sidebar/Sidebar';
 import Calender from './components/calendar/Calendar';
 import Resume from './components/resume/Resume';
@@ -9,7 +10,8 @@ function App() {
         <div className="App">
             <Sidebar />
             <Calender />
-            <Resume />
+            <Route path="/resume" exact component={Resume} />
+            {/* <Route path="/books" component={Books} /> */}
         </div>
     );
 }

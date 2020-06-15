@@ -26,15 +26,12 @@
             ul{
                 li{
                     margin-top: 10px;
-                    button{
-                        padding: 5px;
+                    a{
                         color: #fff;
                         border: none;
-                        background-color: #000000;
-                        outline: none;
-                        cursor: pointer;
+                        text-decoration: none;
                     }
-                    button:hover{
+                    a:hover{
                         font-weight: bold;
                     }
                 }
