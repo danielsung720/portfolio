@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import HeadShot from '../../images/head_shot.jpg';
+import Logo from '../../images/logo.png';
 import '../../scss/sidebar.scss';
 
-const navData = [ 'Resume', 'Todo List', 'PomodoroTimer', 'Seadch(API)'];
+const navData = ['Resume', 'Todo List', 'PomodoroTimer', 'Seadch(API)'];
 
 const Sidebar = () => {
 
@@ -18,18 +18,18 @@ const Sidebar = () => {
         <div className="sidebar_wrapper" style={{ height: documentHeight - 0.1 + 'px' }}>
             <div className="sidebar">
                 <div className="photo">
-                    <img src={HeadShot} alt="isME"></img>
+                    <img src={Logo} alt="isME"></img>
                 </div>
                 <div className="title">
-                    <h2>Daniel</h2>
-                    <p>來自高雄的熱血男子</p>
+                    <h2>Daniel's</h2>
+                    <p>-Portfolio-</p>
                 </div>
                 <div className="nav">
                     <ul>
                         {navData.map((item, i) => {
                             return <li key={i}>
-                                        <button>{item}</button>
-                                    </li>
+                                <button>{item}</button>
+                            </li>
                         })}
                     </ul>
                 </div>
