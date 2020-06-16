@@ -6,6 +6,7 @@ import Resume from './components/resume/Resume';
 import TodoList from './components/todolist/TodoList';
 import PomodoroTimer from './components/pomodorotimer/PomodoroTimer';
 import Search from './components/search/Search';
+import CtrlBar from './components/ctrlbar/CrtlBar';
 import './scss/app.scss';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <div className="App">
             <Sidebar />
             <Calender />
+            <CtrlBar />
             <Route path="/" exact component={Resume} />
             <Route path="/todo_list" component={TodoList} />
             <Route

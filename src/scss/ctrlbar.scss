@@ -1,0 +1,12 @@
+.ctrl_bar{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    div{
+        padding: 5px;
+        cursor: pointer;
+        img{
+            width: 80px;
+        }
+    }
+}
