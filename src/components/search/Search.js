@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
 import Results from './Results';
-import '../../scss/search.scss'
+import '../../scss/search.scss';
 
 class Search extends Component {
     constructor(props) {
@@ -9,7 +9,7 @@ class Search extends Component {
         this.state = {
             datum: '',
             keyWord: '',
-            category: '請選擇分類',
+            category: '全部',
             sort: 'desc'
         }
         this.handleKeyWord = this.handleKeyWord.bind(this);

@@ -42,10 +42,11 @@ class Results extends Component {
         let datum = Array.from(this.props.datum);
         datum.sort(this.sortData);
         let updateResult = datum.filter((item) => {
-            if (this.props.category === '請選擇分類') {
-                return item['統計調查名稱'].toLowerCase().indexOf(this.props.keyWord) !== -1;
+            if (this.props.category === '全部') {
+                return item['統計調查名稱'].toLowerCase().indexOf(this.props.keyWord) !== -1 || item['調查年'].toLowerCase().indexOf(this.props.keyWord) !== -1;
             } else {
-                return item['統計調查名稱'].toLowerCase().indexOf(this.props.category) !== -1 && item['統計調查名稱'].toLowerCase().indexOf(this.props.keyWord) !== -1;
+                return item['統計調查名稱'].toLowerCase().indexOf(this.props.category) !== -1 
+                        && (item['統計調查名稱'].toLowerCase().indexOf(this.props.keyWord) !== -1 || item['調查年'].toLowerCase().indexOf(this.props.keyWord) !== -1);
             }
         })
         let sliceResult = updateResult.slice(0, this.state.resNum);
