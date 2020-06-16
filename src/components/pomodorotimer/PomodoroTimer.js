@@ -5,6 +5,7 @@ class PomodoroTimer extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            speed: 1000,
             seconds: 0,
             minutes: 0,
             complete: 0,
@@ -18,11 +19,12 @@ class PomodoroTimer extends Component {
         this.countAlphaTime = this.countAlphaTime.bind(this);
         this.handleClickStart = this.handleClickStart.bind(this);
         this.handleClickReset = this.handleClickReset.bind(this);
+        this.changeSpeed = this.changeSpeed.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if(prevState.key !== this.state.key && this.state.key === true) {
-            this.workTimer = setInterval(this.countWorkingTime, 1000);
+        if (prevState.key !== this.state.key && this.state.key === true) {
+            this.workTimer = setInterval(this.countWorkingTime, this.state.speed);
             this.alphaTimer = setInterval(this.countAlphaTime, 100);
         }
     }
@@ -34,18 +36,18 @@ class PomodoroTimer extends Component {
             complete: this.state.complete + 0.067
         })
 
-        if(this.state.seconds === 60) {
+        if (this.state.seconds === 60) {
             this.setState({
                 seconds: 0,
                 minutes: this.state.minutes + 1
             })
         }
 
-        if(this.state.minutes >= 24) {
+        if (this.state.minutes >= 24) {
             this.setState({ stateWord: 'Finish...' })
         }
 
-        if(this.state.minutes >= this.props.workingTime) {
+        if (this.state.minutes >= this.props.workingTime) {
             clearInterval(this.workTimer);
             this.setState({
                 seconds: 0,
@@ -56,7 +58,7 @@ class PomodoroTimer extends Component {
                 key: false,
             });
             alert('Time up for a break!!');
-            this.restTimer = setInterval(this.countRestTime, 1000);
+            this.restTimer = setInterval(this.countRestTime, this.state.speed);
         }
     }
 
@@ -67,14 +69,14 @@ class PomodoroTimer extends Component {
             complete: this.state.complete + 0.34
         })
 
-        if(this.state.seconds === 60) {
+        if (this.state.seconds === 60) {
             this.setState({
                 seconds: 0,
                 minutes: this.state.minutes + 1
             })
         }
 
-        if(this.state.minutes >= this.props.restingTime) {
+        if (this.state.minutes >= this.props.restingTime) {
             clearInterval(this.restTimer);
             clearInterval(this.alphaTimer);
             this.setState({
@@ -90,19 +92,18 @@ class PomodoroTimer extends Component {
     }
 
     countAlphaTime() {
-        if(this.state.alphaKey === false) {
-            this.setState({ alpha: this.state.alpha + 0.15})
-            if(this.state.alpha >= 1) {
+        if (this.state.alphaKey === false) {
+            this.setState({ alpha: this.state.alpha + 0.15 })
+            if (this.state.alpha >= 1) {
                 this.setState({ alphaKey: true })
             }
         } else if (this.state.alphaKey === true) {
-            this.setState({ alpha: this.state.alpha - 0.15})
-            if(this.state.alpha <= 0) {
+            this.setState({ alpha: this.state.alpha - 0.15 })
+            if (this.state.alpha <= 0) {
                 this.setState({ alphaKey: false })
             }
         }
     }
-
 
     handleClickStart() {
         this.setState({ key: true });
@@ -121,18 +122,24 @@ class PomodoroTimer extends Component {
         clearInterval(this.restTimer);
     }
 
+    changeSpeed(e) {
+        this.setState({
+            speed: 1000 / Number(e.target.value),
+        })
+    }
+
 
     render() {
-        return(
-            <div id="pomodoroTimerWrapper">
-                <div id="container">
-                    <div id="triangle01"></div>
-                    <div id="triangle02"></div>
-                    <div id="triangle03"></div>
-                    <div id="title">
+        return (
+            <div className="pomodoroTimerWrapper">
+                <div className="container">
+                    <div className="triangle01"></div>
+                    <div className="triangle02"></div>
+                    <div className="triangle03"></div>
+                    <div className="title">
                         <h1>PomodoroTimer</h1>
                         <h4>
-                            For a total time of <span>{this.props.workingTime + this.props.restingTime}</span> minutes. 
+                            For a total time of <span>{this.props.workingTime + this.props.restingTime}</span> minutes.
                         </h4>
                         <h4>
                             This timer runs for <span>{this.props.workingTime}</span> minutes
@@ -141,18 +148,18 @@ class PomodoroTimer extends Component {
                             followed by rest of <span>{this.props.restingTime}</span> minutes.
                         </h4>
                     </div>
-                    <div id="scheduleWrapper">
-                        <div id="schedule">
-                            <div id="text" style={{color: `rgba(86, 86, 86, ${this.state.alpha})`}}>
+                    <div className="scheduleWrapper">
+                        <div className="schedule">
+                            <div className="text" style={{ color: `rgba(86, 86, 86, ${this.state.alpha})` }}>
                                 {this.state.stateWord}
                             </div>
-                            <div id="complete" style={{width: `${this.state.complete}%`}}></div>
+                            <div className="complete" style={{ width: `${this.state.complete}%` }}></div>
                         </div>
                     </div>
-                    <div id="prompt">
+                    <div className="prompt">
                         There are {this.state.minutes} minutes {this.state.seconds} seconds elapsed.
                     </div>
-                    <div id="ctrlBar">
+                    <div className="ctrlBar">
                         <div>
                             <button onClick={this.handleClickStart}>START</button>
                         </div>
@@ -160,6 +167,12 @@ class PomodoroTimer extends Component {
                             <button onClick={this.handleClickReset}>RESET</button>
                         </div>
                     </div>
+                </div>
+                <div className="testBar">
+                    <div className="triangle04"></div>
+                    <h3>測試調速</h3>
+                    <input type="text" onChange={this.changeSpeed} defaultValue={this.state.speed / 1000} />倍
+                    <p>*最高1000倍</p>
                 </div>
             </div>
         )

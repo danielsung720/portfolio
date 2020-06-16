@@ -14,8 +14,10 @@ function App() {
             <Calender />
             <Route path="/" exact component={Resume} />
             <Route path="/todo_list" component={TodoList} />
-            <Route path="/pomodoro_timer" component={PomodoroTimer} />
-            <Route component={() => (<div>404 Not found </div>)} />
+            <Route
+                path="/pomodoro_timer"
+                render={(props) => <PomodoroTimer workingTime={25} restingTime={5} {...props} />}
+            />
         </div>
     );
 }

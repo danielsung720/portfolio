@@ -1,4 +1,4 @@
-#pomodoroTimerWrapper{
+.pomodoroTimerWrapper{
     margin: 10px 20px 0 270px;
     height: 88vh;
     background-color: #D9D9D9;
@@ -9,7 +9,7 @@
     font-size: 16px;
     text-align: center;
     color: #fff;
-    #container{
+    .container{
         height: 400px;
         width: 400px;
         background-color: #FF6446;
@@ -17,7 +17,7 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        #triangle01{
+        .triangle01{
             position: relative;
             top: -50px;
             left: 170px;
@@ -25,24 +25,24 @@
             border-left: 30px solid transparent;
             border-bottom: 50px solid #02C874;
         }
-        #triangle02,
-        #triangle03{
+        .triangle02,
+        .triangle03{
             border-right: 20px solid transparent;
             border-left: 20px solid transparent;
             border-bottom: 30px solid #02C874;
         }
-        #triangle02{
+        .triangle02{
             position: relative;
             top: -40px;
             left: 90px;
         }
-        #triangle03{
+        .triangle03{
             position: relative;
             top: -40px;
             left: 110px;
         }
         
-        #title{
+        .title{
             position: relative;
             top: -30px;
             width: 100%;
@@ -56,23 +56,23 @@
                 text-decoration: underline;
             }
         }
-        #scheduleWrapper{
+        .scheduleWrapper{
             position: relative;
             top: -20px;
             width: 100%;
             height: 50px;
             display: flex;
             justify-content: center;
-            #schedule{
+            .schedule{
                 height: 40px;
                 line-height: 40px;
                 width: 80%;
                 background-color: #fff;
-                #text{
+                .text{
                     position: relative;
                     z-index: 2;
                 }
-                #complete{
+                .complete{
                     position: relative;
                     top: -40px;
                     z-index: 1;
@@ -81,12 +81,12 @@
                 }
             }
         }
-        #prompt{
+        .prompt{
             position: relative;
             top: -20px;
             width: 100%;
         }
-        #ctrlBar{
+        .ctrlBar{
             position: relative;
             top: -20px;
             width: 100%;
@@ -103,6 +103,27 @@
                     outline: none;
                 }
             }
+        }
+    }
+    .testBar{
+        padding: 25px;
+        border-radius: 99em;
+        background-color: #FF6446;
+        color: #ffffff;
+        position: fixed;
+        top: 120px;
+        right: 80px;
+        input{
+            width: 50px;
+            text-align: center;
+        }
+        .triangle04{
+            position: fixed;
+            top: 100px;
+            right: 135px;
+            border-right: 15px solid transparent;
+            border-left: 15px solid transparent;
+            border-bottom: 25px solid #02C874;
         }
     }
 }
