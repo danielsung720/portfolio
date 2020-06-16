@@ -30,6 +30,13 @@ class PomodoroTimer extends Component {
     }
 
     countWorkingTime() {
+        if(this.state.speed === Infinity) {
+            this.setState({ key: false });
+            clearInterval(this.workTimer);
+            clearInterval(this.alphaTimer);
+            return alert("請輸入正確速度")
+        }
+
         this.setState({
             stateWord: 'Working...',
             seconds: this.state.seconds + 1,
@@ -115,6 +122,7 @@ class PomodoroTimer extends Component {
             minutes: 0,
             complete: 0,
             stateWord: 'Over',
+            alpha: 1,
             key: false
         })
         clearInterval(this.workTimer);
@@ -123,6 +131,13 @@ class PomodoroTimer extends Component {
     }
 
     changeSpeed(e) {
+        if(e.keyCode !== 37 && e.keyCode !== 39) {
+            e.target.value = e.target.value.replace(/\D/g,'')
+        }
+        if (e.target.value > 1000 || e.target.value === "0") {
+            e.target.value = 1;
+            alert('請輸入正確數字');
+        }
         this.setState({
             speed: 1000 / Number(e.target.value),
         })
