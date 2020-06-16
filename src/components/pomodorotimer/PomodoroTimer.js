@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../scss/pomodoroTimer.scss';
+import '../../scss/pomodorotimer.scss';
 
 class PomodoroTimer extends Component {
     constructor(props) {
