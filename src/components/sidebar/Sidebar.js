@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Logo from '../../images/logo.png';
 import '../../scss/sidebar.scss';
 
@@ -21,11 +21,23 @@ const navData = [
     }
 ]
 
-const handleScroll = () => {
-    window.scrollTo(0,0);
-}
-
 const Sidebar = () => {
+    const [selectStyle, setSelectStyle] = useState();
+
+    useEffect(() => {
+        if(selectStyle === undefined) { setSelectStyle(0) }
+        const styleData = window.localStorage.getItem('styleData');
+        if (styleData) {
+            setSelectStyle(Number(styleData));
+        }
+    }, []);
+
+    useEffect(() => {
+        window.localStorage.setItem(
+            'styleData', JSON.stringify(selectStyle)
+        )
+    }, [selectStyle]);
+
     return (
         <div className="sidebar_wrapper">
             <div className="sidebar">
@@ -39,11 +51,20 @@ const Sidebar = () => {
                 <div className="nav">
                     <ul>
                         {navData.map((item, i) => {
-                            return(
+                            return (
                                 <li key={i}>
-                                    <a href={item.url} onClick={handleScroll}>{item.text}</a>
+                                    <a
+                                        href={item.url}
+                                        onClick={() => {
+                                            setSelectStyle(i);
+                                            window.scrollTo(0, 0);
+                                        }}
+                                        className={selectStyle === i ? 'selected' : null}
+                                    >
+                                        {item.text}
+                                    </a>
                                 </li>
-                                )
+                            )
                         })}
                     </ul>
                 </div>
