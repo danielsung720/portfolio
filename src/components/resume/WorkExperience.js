@@ -1,7 +1,6 @@
 import React from 'react';
 
 const WorkExperience = (workData) => {
-    console.log(workData)
     return (
         <>
             {workData.workData.map((item, i) => {
