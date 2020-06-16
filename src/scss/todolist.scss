@@ -1,9 +1,13 @@
 .todoWrapper{
     word-break: break-all;
-    margin: 0 20px 0 270px;
+    margin: 20px 20px 20px 270px;
+    padding-bottom: 25px;
+    border-radius: 15px;
     display: flex;
     justify-content: center;
+    align-content: flex-start;
     flex-wrap: wrap;
+    background-color: #2a9d8f;
     .title{
         margin-top: 20px;
         width: 100%;
@@ -11,7 +15,7 @@
         justify-content: center;
         h1{
             color: #e9c46a;
-            font-size: 5em;
+            font-size: 50pt;
             text-shadow:  0.05em 0.05em #333;
         }
     }
