@@ -5,6 +5,7 @@ import Calender from './components/calendar/Calendar';
 import Resume from './components/resume/Resume';
 import TodoList from './components/todolist/TodoList';
 import PomodoroTimer from './components/pomodorotimer/PomodoroTimer';
+import Search from './components/search/Search';
 import './scss/app.scss';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                 path="/pomodoro_timer"
                 render={(props) => <PomodoroTimer workingTime={25} restingTime={5} {...props} />}
             />
+            <Route path="/search_api" component={Search} />
         </div>
     );
 }
