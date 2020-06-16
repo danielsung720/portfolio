@@ -21,6 +21,10 @@ const navData = [
     }
 ]
 
+const handleScroll = () => {
+    window.scrollTo(0,0);
+}
+
 const Sidebar = () => {
     return (
         <div className="sidebar_wrapper">
@@ -37,7 +41,7 @@ const Sidebar = () => {
                         {navData.map((item, i) => {
                             return(
                                 <li key={i}>
-                                    <a href={item.url}>{item.text}</a>
+                                    <a href={item.url} onClick={handleScroll}>{item.text}</a>
                                 </li>
                                 )
                         })}
