@@ -1,3 +1,8 @@
+@mixin pad1024{
+    @media(max-width: 1024px){
+        @content;
+    }
+}
 .sidebar_wrapper{
     position: fixed;
     top: 0;
@@ -5,9 +10,16 @@
     bottom: 0;
     width: 250px;
     background-color: #000000;
+    @include pad1024{
+        background-color: #000000;
+        width: 200px;
+    }
     .sidebar{
         color: #ffffff;
         width: 250px;
+        @include pad1024{
+            width: 200px;
+        }
         .photo{
             margin-top: 50px;
             display: flex;
@@ -45,6 +57,9 @@
             margin-top: 80px;
             padding-left: 50px;
             line-height: 30px;
+            @include pad1024{
+                padding-left: 25px;
+            }
         }
     }
 }

@@ -1,3 +1,8 @@
+@mixin pad1024{
+    @media(max-width: 1024px){
+        @content;
+    }
+}
 .pomodoroTimerWrapper{
     margin: 20px 20px 20px 270px;
     border-radius: 15px;
@@ -10,6 +15,9 @@
     font-size: 16px;
     text-align: center;
     color: #fff;
+    @include pad1024{
+        margin-left: 220px;
+    }
     .container{
         height: 400px;
         width: 400px;

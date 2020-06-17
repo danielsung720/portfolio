@@ -1,3 +1,8 @@
+@mixin pad1024{
+    @media(max-width: 1024px){
+        @content;
+    }
+}
 .resume_wrapper{
     background-color: none;
     margin-top: 20px;
@@ -6,6 +11,9 @@
     justify-content: center;
     flex-wrap: wrap;
     color: #565656;
+    @include pad1024{
+        margin-left: 180px;
+    }
     .header{
         width: 80%;
         display: flex;
@@ -19,6 +27,9 @@
             flex-wrap: wrap;
             align-content: space-between;
             border-right: solid #dddddd 1px;
+            @include pad1024{
+                font-size: 0.8em;
+            }
             .title{
                 width: 100%;
                 h2{ margin: 20px 0; text-decoration: underline; }
@@ -41,6 +52,9 @@
             align-items: center;
             img{
                 width: 600px;
+                @include pad1024{
+                    width: 450px;
+                }
             }
         }
     }
@@ -91,7 +105,13 @@
                         width: 30px;
                         color: #565656;
                         background-color: #adb5bd;
+                        @include pad1024{
+                            padding: 10px;
+                        }
                     }
+                }
+                @include pad1024{
+                    font-size: 0.8em;
                 }
                 .center{
                     width: 75%;
