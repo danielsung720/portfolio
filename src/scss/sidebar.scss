@@ -46,6 +46,9 @@
             }
             img{
                 width: 50%;
+                @include mobile{
+                    width: 20%;
+                }
             }
         }
         .title{
