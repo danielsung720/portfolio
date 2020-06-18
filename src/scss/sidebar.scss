@@ -38,13 +38,17 @@
         }
         .photo{
             margin-top: 50px;
+            width: 100%;
             display: flex;
             justify-content: center;
-            @include mobile{
-                display: none;
-            }
-            img{
+            div{
                 width: 40%;
+                @include mobile{
+                    width: 20%;
+                }
+                img{
+                    width: 100%;
+                }
             }
         }
         .title{

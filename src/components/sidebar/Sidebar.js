@@ -42,7 +42,9 @@ const Sidebar = () => {
         <div className="sidebar_wrapper">
             <div className="sidebar">
                 <div className="photo">
-                    <img src={Logo} alt="isME"></img>
+                    <div>
+                        <img src={Logo} alt="isME"></img>
+                    </div>
                 </div>
                 <div className="title">
                     <h2>Daniel's</h2>
