@@ -3,7 +3,6 @@
 .calendar_wrapper{
     display: flex;
     margin: 15px 20px 0 270px;
-
     padding-bottom: 5px;
     border-bottom: 1px #dddddd solid;
     @include pad{
@@ -33,6 +32,7 @@
         font-weight: bold;
         @include mobile{
             width: 100%;
+            text-align: center;
         }
         .year,
         .date,
