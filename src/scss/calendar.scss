@@ -1,16 +1,26 @@
-@mixin pad1024{
+@mixin pad{
     @media(max-width: 1024px){
         @content;
     }
 }
+@mixin mobile{
+    @media(max-width: 768px){
+        @content;
+    }
+}
+
 .calendar_wrapper{
     display: flex;
     margin: 15px 20px 0 270px;
-    height: 30px;
+
     padding-bottom: 5px;
     border-bottom: 1px #dddddd solid;
-    @include pad1024{
+    @include pad{
         margin-left: 220px;
+    }
+    @include mobile{
+        margin: 10px 0 0 0;
+        flex-wrap: wrap;
     }
     .title{
         width: 20%;
@@ -20,6 +30,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @include mobile{
+            width: 100%;
+        }
     }
     .calendar{
         color: #565656;
@@ -27,6 +40,9 @@
         display: flex;
         justify-content: flex-end;
         font-weight: bold;
+        @include mobile{
+            width: 100%;
+        }
         .year,
         .date,
         .weekday,
@@ -34,6 +50,10 @@
             height: 10px;
             line-height: 10px;
             padding: 10px 20px;
+            @include mobile{
+                width: 25%;
+                font-size: 0.8em;
+            }
         }
         .year{
             background-color: #e9ecef;

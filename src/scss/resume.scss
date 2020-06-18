@@ -1,9 +1,9 @@
-@mixin pad1024{
+@mixin pad{
     @media(max-width: 1024px){
         @content;
     }
 }
-@mixin pad768{
+@mixin mobile{
     @media(max-width: 768px){
         @content;
     }
@@ -17,14 +17,21 @@
     justify-content: center;
     flex-wrap: wrap;
     color: #565656;
-    @include pad1024{
+    @include pad{
         margin-left: 180px;
+    }
+    @include mobile{
+        margin: 0;
     }
     .header{
         width: 80%;
         display: flex;
         padding-bottom: 10px;
-        border-bottom: solid #dddddd 1px;;
+        border-bottom: solid #dddddd 1px;
+        @include mobile{
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+        }
         .text{
             padding: 10px 10px;
             width: 30%;
@@ -32,15 +39,24 @@
             flex-wrap: wrap;
             align-content: space-between;
             border-right: solid #dddddd 1px;
-            @include pad1024{
+            @include pad{
                 font-size: 0.8em;
             }
-            @include pad768{
+            @include mobile{
+                width: 100%;
                 font-size: 0.6em;
+                border-right: none;
+                text-align: center;
             }
             .title{
                 width: 100%;
-                h2{ margin: 20px 0; text-decoration: underline; }
+                h2{ 
+                    margin: 20px 0;
+                    text-decoration: underline;
+                    @include mobile{
+                        margin: 5px 0;
+                    }
+                }
                 h3{ line-height: 2em; }
             }
             .connection{
@@ -50,7 +66,7 @@
                     line-height: 2em;
                     color: #008c8c;
                     text-decoration: none;
-                    @include pad768{
+                    @include mobile{
                         font-size: 8pt;
                     }
                 }
@@ -61,14 +77,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            @include pad{
+                margin-top: 10px;
+                width: 100%;
+            }
             img{
-                width: 600px;
-                @include pad1024{
-                    width: 450px;
-                }
-                @include pad768{
-                    width: 300px;
-                }
+                margin-left: 20px;
+                width: 100%;
             }
         }
     }
@@ -114,34 +129,42 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    @include mobile{
+                        font-size: 20px;
+                    }
                     .font{
                         padding: 20px;
                         width: 30px;
                         color: #565656;
                         background-color: #adb5bd;
-                        @include pad1024{
+                        @include pad{
                             padding: 10px;
                         }
-                        @include pad768{
+                        @include mobile{
                             padding: 5px;
-                            margin-right: 5px;
+                            margin-right: 10px;
                         }
                     }
                 }
-                @include pad1024{
+                @include pad{
                     font-size: 0.8em;
                 }
-                @include pad768{
+                @include mobile{
                     font-size: 0.6em;
                 }
                 .center{
                     width: 75%;
+                    @include mobile{
+                        width: 58%;
+                        word-break: break-all;
+                    }
                 }
                 .right{
                     width: 15%;
                     text-align: right;
-                    @include pad768{
-                        width: 20%;
+                    @include mobile{
+                        width: 32%;
+                        word-break: break-all;
                     }
                 }
             }

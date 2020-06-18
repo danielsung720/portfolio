@@ -1,7 +1,16 @@
+@mixin mobile{
+    @media(max-width: 500px){
+        @content;
+    }
+}
+
 .ctrl_bar{
     position: fixed;
     bottom: 30px;
     right: 30px;
+    @include mobile{
+        display: none;
+    }
     div{
         padding: 5px;
         cursor: pointer;

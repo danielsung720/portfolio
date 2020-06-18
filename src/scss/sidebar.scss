@@ -1,9 +1,9 @@
-@mixin pad1024{
+@mixin pad{
     @media(max-width: 1024px){
         @content;
     }
 }
-@mixin pad768{
+@mixin mobile{
     @media(max-width: 768px){
         @content;
     }
@@ -16,31 +16,61 @@
     bottom: 0;
     width: 250px;
     background-color: #000000;
-    @include pad1024{
+    @include pad{
         width: 200px;
     }
+    @include mobile{
+        position: relative;
+        width: 100%;
+    }
+    
     .sidebar{
         color: #ffffff;
         width: 250px;
-        @include pad1024{
+        @include pad{
             width: 200px;
+        }
+        @include mobile{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         .photo{
             margin-top: 50px;
             display: flex;
             justify-content: center;
+            @include mobile{
+                width: 100%;
+                margin-top: 20px;
+            }
             img{
-                width: 150px;
+                width: 50%;
+                @include mobile{
+                    width: 20%;
+                }
             }
         }
         .title{
             margin-top: 10px;
             text-align: center;
+            @include mobile{
+                width: 100%;
+            }
         }
         .nav{
             margin-top: 30px;
             text-align: center;
+            @include mobile{
+                width: 100%;
+                margin-top: 10px;
+            }
             ul{
+                @include mobile{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
                 li{
                     margin-top: 10px;
                     a{
@@ -55,6 +85,10 @@
                         color: yellow;
                         font-weight: bold;
                     }
+                    @include mobile{
+                        display: inline;
+                        margin: 0 5px;
+                    }
                 }
             }
         }
@@ -62,12 +96,20 @@
             margin-top: 80px;
             padding-left: 50px;
             line-height: 30px;
-            @include pad1024{
+            @include pad{
                 padding-left: 25px;
             }
-            @include pad768{
-                font-size: 0.8em;
-                margin-top: 60px;
+            @include mobile{
+                margin: 15px 0;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                p{
+                    display: inline;
+                }
+                p.comma::after{
+                    content: "，";
+                }
             }
         }
     }

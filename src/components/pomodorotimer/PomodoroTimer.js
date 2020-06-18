@@ -149,8 +149,6 @@ class PomodoroTimer extends Component {
             <div className="pomodoroTimerWrapper">
                 <div className="container">
                     <div className="triangle01"></div>
-                    <div className="triangle02"></div>
-                    <div className="triangle03"></div>
                     <div className="title">
                         <h1>PomodoroTimer</h1>
                         <h4>

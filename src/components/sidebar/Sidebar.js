@@ -8,7 +8,7 @@ const navData = [
         url: '/portfolio/#/',
     },
     {
-        text: 'Todo List',
+        text: 'TodoList',
         url: '/portfolio/#/todo_list',
     },
     {
@@ -70,7 +70,7 @@ const Sidebar = () => {
                 </div>
                 <div className="remarks">
                     <p>一個立志成為</p>
-                    <p>編碼大師的北漂兒</p>
+                    <p className="comma">編碼大師的北漂兒</p>
                     <p>在此用高雄的溫度</p>
                     <p>來寫下對於前端的熱情</p>
                     <p>（～￣▽￣～）</p>

@@ -1,8 +1,14 @@
-@mixin pad1024{
+@mixin pad{
     @media(max-width: 1024px){
         @content;
     }
 }
+@mixin mobile{
+    @media(max-width: 768px){
+        @content;
+    }
+}
+
 .pomodoroTimerWrapper{
     margin: 20px 20px 20px 270px;
     border-radius: 15px;
@@ -15,10 +21,17 @@
     font-size: 16px;
     text-align: center;
     color: #fff;
-    @include pad1024{
+    @include pad{
         margin-left: 220px;
     }
+    @include mobile{
+        margin: 10px 5px;
+        position: relative;
+        flex-wrap: wrap;
+        font-size: 0.8em;
+    }
     .container{
+        position: relative;
         height: 400px;
         width: 400px;
         background-color: #FF6446;
@@ -26,34 +39,24 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        @include mobile{
+            margin: 10px;
+        }
         .triangle01{
-            position: relative;
-            top: -50px;
+            position: absolute;
+            top: -40px;
             left: 170px;
             border-right: 30px solid transparent;
             border-left: 30px solid transparent;
             border-bottom: 50px solid #02C874;
-        }
-        .triangle02,
-        .triangle03{
-            border-right: 20px solid transparent;
-            border-left: 20px solid transparent;
-            border-bottom: 30px solid #02C874;
-        }
-        .triangle02{
-            position: relative;
-            top: -40px;
-            left: 90px;
-        }
-        .triangle03{
-            position: relative;
-            top: -40px;
-            left: 110px;
+            @include mobile{
+                left: 142px;
+                top: -30px;
+            }
         }
         
         .title{
-            position: relative;
-            top: -30px;
+            margin-top: 20px;
             width: 100%;
             h1{
                 margin-top: 0px;
@@ -66,8 +69,6 @@
             }
         }
         .scheduleWrapper{
-            position: relative;
-            top: -20px;
             width: 100%;
             height: 50px;
             display: flex;
@@ -91,13 +92,9 @@
             }
         }
         .prompt{
-            position: relative;
-            top: -20px;
             width: 100%;
         }
         .ctrlBar{
-            position: relative;
-            top: -20px;
             width: 100%;
             div{
                 margin-top: 10px;
@@ -115,24 +112,26 @@
         }
     }
     .testBar{
+        position: relative;
+        margin-left: 10px;
         padding: 25px;
         border-radius: 99em;
         background-color: #FF6446;
         color: #ffffff;
-        position: fixed;
-        top: 120px;
-        right: 80px;
         input{
             width: 50px;
             text-align: center;
         }
         .triangle04{
-            position: fixed;
-            top: 100px;
-            right: 135px;
+            position: absolute;
+            top: -20px;
+            right: 60px;
             border-right: 15px solid transparent;
             border-left: 15px solid transparent;
             border-bottom: 25px solid #02C874;
+            @include mobile{
+                right: 50px;
+            }
         }
     }
 }

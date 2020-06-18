@@ -1,8 +1,14 @@
-@mixin pad1024{
+@mixin pad{
     @media(max-width: 1024px){
         @content;
     }
 }
+@mixin mobile{
+    @media(max-width: 768px){
+        @content;
+    }
+}
+
 .todoWrapper{
     word-break: break-all;
     margin: 20px 20px 20px 270px;
@@ -13,8 +19,11 @@
     align-content: flex-start;
     flex-wrap: wrap;
     background-color: #2a9d8f;
-    @include pad1024{
+    @include pad{
         margin-left: 220px;
+    }
+    @include mobile{
+        margin: 10px 5px 10px 5px;
     }
     .title{
         margin-top: 20px;
@@ -87,6 +96,10 @@
             width: 70%;
             display: flex;
             justify-content: space-between;
+            @include mobile{
+                width: 90%;
+                margin: 10px 10px;
+            }
             .list-item_state{
                 margin: 0px 15px;
                 width: 20%;
