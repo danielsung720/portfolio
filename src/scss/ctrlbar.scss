@@ -1,8 +1,4 @@
-@mixin mobile{
-    @media(max-width: 500px){
-        @content;
-    }
-}
+@import './media.scss';
 
 .ctrl_bar{
     position: fixed;

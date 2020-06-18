@@ -1,13 +1,4 @@
-@mixin pad{
-    @media(max-width: 1024px){
-        @content;
-    }
-}
-@mixin mobile{
-    @media(max-width: 768px){
-        @content;
-    }
-}
+@import './media.scss';
 
 .resume_wrapper{
     background-color: none;
