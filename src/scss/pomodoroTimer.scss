@@ -11,8 +11,8 @@
 
 .pomodoroTimerWrapper{
     margin: 20px 20px 20px 270px;
+    padding: 20px 0;
     border-radius: 15px;
-    height: 87vh;
     background-color: #4EFEB3;
     display: flex;
     justify-content: center;
@@ -118,6 +118,9 @@
         border-radius: 99em;
         background-color: #FF6446;
         color: #ffffff;
+        @include mobile{
+            margin-top: 20px;
+        }
         input{
             width: 50px;
             text-align: center;
