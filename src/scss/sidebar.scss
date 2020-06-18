@@ -64,8 +64,8 @@
             ul{
                 @include mobile{
                     display: flex;
-                    flex-wrap: wrap;
                     justify-content: center;
+                    flex-wrap: wrap;
                 }
                 li{
                     margin-top: 10px;
@@ -82,8 +82,9 @@
                         font-weight: bold;
                     }
                     @include mobile{
-                        display: inline;
-                        margin: 0 5px;
+                        display: inline-block;
+                        width: 40%;
+                        margin: 5px 0;
                     }
                 }
             }
