@@ -3,6 +3,12 @@
         @content;
     }
 }
+@mixin pad768{
+    @media(max-width: 768px){
+        @content;
+    }
+}
+
 .sidebar_wrapper{
     position: fixed;
     top: 0;
@@ -11,7 +17,6 @@
     width: 250px;
     background-color: #000000;
     @include pad1024{
-        background-color: #000000;
         width: 200px;
     }
     .sidebar{
@@ -59,6 +64,10 @@
             line-height: 30px;
             @include pad1024{
                 padding-left: 25px;
+            }
+            @include pad768{
+                font-size: 0.8em;
+                margin-top: 60px;
             }
         }
     }

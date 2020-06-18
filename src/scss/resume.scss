@@ -3,6 +3,12 @@
         @content;
     }
 }
+@mixin pad768{
+    @media(max-width: 768px){
+        @content;
+    }
+}
+
 .resume_wrapper{
     background-color: none;
     margin-top: 20px;
@@ -20,8 +26,7 @@
         padding-bottom: 10px;
         border-bottom: solid #dddddd 1px;;
         .text{
-            padding: 10px 0;
-            padding-left: 10px;
+            padding: 10px 10px;
             width: 30%;
             display: flex;
             flex-wrap: wrap;
@@ -29,6 +34,9 @@
             border-right: solid #dddddd 1px;
             @include pad1024{
                 font-size: 0.8em;
+            }
+            @include pad768{
+                font-size: 0.6em;
             }
             .title{
                 width: 100%;
@@ -42,6 +50,9 @@
                     line-height: 2em;
                     color: #008c8c;
                     text-decoration: none;
+                    @include pad768{
+                        font-size: 8pt;
+                    }
                 }
             }
         }
@@ -54,6 +65,9 @@
                 width: 600px;
                 @include pad1024{
                     width: 450px;
+                }
+                @include pad768{
+                    width: 300px;
                 }
             }
         }
@@ -108,10 +122,17 @@
                         @include pad1024{
                             padding: 10px;
                         }
+                        @include pad768{
+                            padding: 5px;
+                            margin-right: 5px;
+                        }
                     }
                 }
                 @include pad1024{
                     font-size: 0.8em;
+                }
+                @include pad768{
+                    font-size: 0.6em;
                 }
                 .center{
                     width: 75%;
@@ -119,6 +140,9 @@
                 .right{
                     width: 15%;
                     text-align: right;
+                    @include pad768{
+                        width: 20%;
+                    }
                 }
             }
         }
