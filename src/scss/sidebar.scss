@@ -45,10 +45,7 @@
                 margin-top: 20px;
             }
             img{
-                width: 50%;
-                @include mobile{
-                    width: 20%;
-                }
+                width: 40%;
             }
         }
         .title{
